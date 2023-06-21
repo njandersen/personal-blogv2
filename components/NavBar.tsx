@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { Merriweather } from "next/font/google";
+import AuthCheck from "./AuthCheck";
 
 const merriweather = Merriweather({
   weight: "400",
@@ -27,6 +28,13 @@ export default function NavBar() {
             <h1>About</h1>
           </Link>
         </li>
+        <AuthCheck>
+          <li className="pr-3">
+            <Link href="/create">
+              <h1>Create Post</h1>
+            </Link>
+          </li>
+        </AuthCheck>
       </ul>
     </nav>
   );
