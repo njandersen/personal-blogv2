@@ -8,34 +8,25 @@ const merriweather = Merriweather({
 });
 export default function NavBar() {
   return (
-    <nav className="flex flex-col items-center justify-center ">
-      <div className="border-b-2 pb-10 border-black w-2/3 items-center justify-center flex flex-col ">
-        <Link href="/">
-          <h1 className={`mt-3 ${merriweather.className} text-3xl font-bold`}>
-            N.J. Andersen
-          </h1>
-        </Link>
-        <p>Software Engineer, Nerd.</p>
+    <div className="w-full h-[98px] relative">
+      <div className="left-[30px] top-0 absolute text-black text-[40px] font-bold">
+        N. J. Andersen
+        <br />
       </div>
-      <ul className="flex p-3 ">
-        <li className="pr-3">
-          <Link href="/">
-            <h1>Feed</h1>
-          </Link>
-        </li>
-        <li className="pr-3">
-          <Link href="/about">
-            <h1>About</h1>
-          </Link>
-        </li>
+      <div className="left-2/4 top-[35px] absolute text-black text-lg font-medium">
+        <Link href="/">
+          <h1>Feed</h1>
+        </Link>
+      </div>
+
+      <div className="left-2/3 top-[35px] absolute text-black text-lg font-medium">
         <AuthCheck>
-          <li className="pr-3">
-            <Link href="/create">
-              <h1>Create Post</h1>
-            </Link>
-          </li>
+          <Link href="/create">
+            <h1>Create Post</h1>
+          </Link>
         </AuthCheck>
-      </ul>
-    </nav>
+      </div>
+      <div className="w-full h-[0px] left-0 top-[93px] absolute border border-neutral-400"></div>
+    </div>
   );
 }
