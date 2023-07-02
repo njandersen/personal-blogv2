@@ -1,6 +1,7 @@
 import Image from "next/image";
 import { BsInstagram, BsGithub } from "react-icons/bs";
 import { TbWorldWww } from "react-icons/tb";
+import { Montserrat } from "next/font/google";
 
 import PostFeed from "@/components/Posts/PostFeed";
 import NewestPost from "@/components/Posts/NewestPost";
@@ -14,16 +15,18 @@ const post = {
   image: "/pexels-riccardo-307008.jpg",
 };
 
+const mont = Montserrat({ subsets: ["latin"] });
+
 export default function Home() {
   return (
     <main className="flex flex-col">
       <div className="about-container flex justify-center items-end pt-20 pb-20">
         <div className="about mr-64">
-          <h1 className="text-6xl ">
+          <h1 className={`${mont.className} text-6xl`}>
             Hello, I'm <span className="font-bold">Nicholas</span>
           </h1>
-          <h1 className="text-6xl ">A Front End Engineer</h1>
-          <h1 className="text-6xl ">This is my blog</h1>
+          <h1 className={`${mont.className} text-6xl`}>A Front End Engineer</h1>
+          <h1 className={`${mont.className} text-6xl`}>This is my blog</h1>
           <p className="pt-2">
             Just a guy who loves art and software engineering.
           </p>

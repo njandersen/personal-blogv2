@@ -1,9 +1,10 @@
 import NavBar from "@/components/NavBar";
 import "./globals.css";
-import { Inter } from "next/font/google";
+import { Inter, Montserrat } from "next/font/google";
 import AuthProvider from "./AuthProvider";
 
 const inter = Inter({ subsets: ["latin"] });
+const mont = Montserrat({ subsets: ["latin"] });
 
 export const metadata = {
   title: "Create Next App",
@@ -18,7 +19,7 @@ export default function RootLayout({
   return (
     <AuthProvider>
       <html lang="en">
-        <body className={inter.className}>
+        <body className={mont.className}>
           <NavBar />
           {children}
         </body>
