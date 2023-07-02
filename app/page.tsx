@@ -20,17 +20,21 @@ const mont = Montserrat({ subsets: ["latin"] });
 export default function Home() {
   return (
     <main className="flex flex-col">
-      <div className="about-container flex justify-center items-end pt-20 pb-20">
-        <div className="about mr-64">
-          <h1 className={`${mont.className} text-6xl`}>
+      <div className="about-container flex flex-col md:flex-row md:justify-center md:items-end py-20">
+        <div className="about md:mr-64">
+          <h1 className={`${mont.className} text-4xl md:text-6xl`}>
             Hello, I'm <span className="font-bold">Nicholas</span>
           </h1>
-          <h1 className={`${mont.className} text-6xl`}>A Front End Engineer</h1>
-          <h1 className={`${mont.className} text-6xl`}>This is my blog</h1>
+          <h1 className={`${mont.className} text-4xl md:text-6xl`}>
+            A Front End Engineer
+          </h1>
+          <h1 className={`${mont.className} text-4xl md:text-6xl`}>
+            This is my blog
+          </h1>
           <p className="pt-2">
             Just a guy who loves art and software engineering.
           </p>
-          <div className="pt-3">
+          <div className="pt-3 mb-10">
             <button className="bg-fuchsia-700 p-2 px-4 text-white rounded-xl">
               Contact Me
             </button>
@@ -47,7 +51,7 @@ export default function Home() {
         </div>
         <div className="about-image">
           <Image
-            className="rounded-full shadow-xl w-96 h-96"
+            className="rounded-full shadow-xl w-80 h-80 md:w-96 md:h-96"
             src="/Me-n-Fox2.jpg"
             width={500}
             height={500}
@@ -58,7 +62,7 @@ export default function Home() {
       <div className="mt-20 w-full h-[0px] border border-gray-300 border-dashed"></div>
       <div className="flex flex-col">
         <h2 className="text-2xl font-bold mb-20">Newest Post</h2>
-        <div className="ml-80">
+        <div className="md:ml-80">
           <NewestPost post={post} />
         </div>
       </div>

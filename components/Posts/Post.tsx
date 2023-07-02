@@ -22,7 +22,7 @@ export default function Post({ post }: PostProps) {
   const minutesToRead = (wordCount / 100 + 1).toFixed(0);
 
   return (
-    <div className="flex justify-around border border-gray-300 rounded-xl py-4 h-full shadow-xl ">
+    <div className="flex justify-around border border-gray-300 rounded-xl py-4 px-4 h-full shadow-xl ">
       <div key={post.slug} className="max-w-2xl">
         <div className="mb-4">
           {post.image ? (

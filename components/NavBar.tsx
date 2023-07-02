@@ -13,13 +13,13 @@ export default function NavBar() {
         N. J. Andersen
         <br />
       </div>
-      <div className="left-2/4 top-[35px] absolute text-black text-lg font-medium">
+      <div className="left-2/4 top-[70px] md:top-[35px] absolute text-black text-lg font-medium">
         <Link href="/">
           <h1>Feed</h1>
         </Link>
       </div>
 
-      <div className="left-2/3 top-[35px] absolute text-black text-lg font-medium">
+      <div className="left-2/3 top-[70px] md:top-[35px] absolute text-black text-lg font-medium">
         <AuthCheck>
           <Link href="/create">
             <h1>Create Post</h1>

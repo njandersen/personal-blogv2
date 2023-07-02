@@ -52,7 +52,7 @@ interface Post {
 
 export default function PostFeed() {
   return (
-    <div className="mt-20 grid grid-cols-3 gap-4">
+    <div className="mt-20 grid grid-cols-1 md:grid-cols-3 gap-4">
       {posts.map((post) => (
         <div key={post.slug}>
           <Post post={post} />
