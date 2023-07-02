@@ -1,4 +1,4 @@
-import { NextResponse } from "next/server";
+import Post from "./Post";
 
 const posts = [
   {
@@ -24,18 +24,40 @@ const posts = [
     date: "2023-01-06",
     image: "/pexels-riccardo-307008.jpg",
   },
+  {
+    title: "JavaScript Frameworks: Choosing the Right One for Your Project",
+    content:
+      "With numerous JavaScript frameworks available today, selecting the right one for your project can be a daunting task. In this article, we'll compare and contrast some of the most popular JavaScript frameworks, including React, Angular, and Vue.js. We'll discuss their key features, performance, community support, and learning curve, helping you make an informed decision. Get ready to discover the perfect JavaScript framework that aligns with your project goals!",
+    slug: "javascript-frameworks-choosing-the-right-one-for-your-project",
+    date: "2023-01-06",
+    image: "/pexels-riccardo-307008.jpg",
+  },
+  {
+    title: "JavaScript Frameworks: Choosing the Right One for Your Project",
+    content:
+      "With numerous JavaScript frameworks available today, selecting the right one for your project can be a daunting task. In this article, we'll compare and contrast some of the most popular JavaScript frameworks, including React, Angular, and Vue.js. We'll discuss their key features, performance, community support, and learning curve, helping you make an informed decision. Get ready to discover the perfect JavaScript framework that aligns with your project goals!",
+    slug: "javascript-frameworks-choosing-the-right-one-for-your-project",
+    date: "2023-01-06",
+    image: "/pexels-riccardo-307008.jpg",
+  },
 ];
 
-export async function GET() {
-  const modifiedPosts = posts.map((post) => {
-    return {
-      title: post.title,
-      content: post.content,
-      slug: post.slug,
-      date: post.date,
-      image: post.image,
-    };
-  });
-  console.log(modifiedPosts);
-  return NextResponse.json(modifiedPosts);
+interface Post {
+  title: string;
+  content: string;
+  slug: string;
+  date: string;
+  image?: string;
+}
+
+export default function PostFeed() {
+  return (
+    <div className="mt-20 grid grid-cols-3 gap-4">
+      {posts.map((post) => (
+        <div key={post.slug}>
+          <Post post={post} />
+        </div>
+      ))}
+    </div>
+  );
 }
